@@ -43,3 +43,4 @@ C:\git\ApiPersonas\ApiPersonasBackend\Repository\obj\Debug\net8.0\Repository.dll
 C:\git\ApiPersonas\ApiPersonasBackend\Repository\obj\Debug\net8.0\refint\Repository.dll
 C:\git\ApiPersonas\ApiPersonasBackend\Repository\obj\Debug\net8.0\Repository.pdb
 C:\git\ApiPersonas\ApiPersonasBackend\Repository\obj\Debug\net8.0\ref\Repository.dll
+C:\git\ApiPersonas\ApiPersonasBackend\Repository\obj\Debug\net8.0\Repository.sourcelink.json

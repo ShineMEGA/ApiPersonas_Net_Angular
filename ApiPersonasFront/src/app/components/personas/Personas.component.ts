@@ -3,6 +3,7 @@ import { PieControllerDatasetOptions } from 'chart.js';
 import { Personas } from 'src/app/models/persona.model';
 import { PersonasService } from 'src/app/service/personas.service';
 import { MessageService } from 'primeng/api';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-persona',
@@ -21,13 +22,22 @@ export class PersonasComponent implements OnInit {
   personasDialog: boolean = false;
   eliminarPersonaDialog: boolean = false;
 
+  personaForm: FormGroup = new FormGroup({});
+
   constructor(
     private _personasService: PersonasService,
     private _messageService: MessageService,
+    private  fb: FormBuilder
   ) {}
   
   ngOnInit(): void {
     this.fpersonas();
+    this.personaForm = this.fb.group({
+      personaId: [''],
+      nombre: ['', [Validators.required, Validators.maxLength(50)]],
+      email : ['', [Validators.required, Validators.email]],
+      edad: ['', [Validators.required, Validators.min(10), Validators.max(100)]]
+    });
   }
   
   fpersonas(){
@@ -37,24 +47,34 @@ export class PersonasComponent implements OnInit {
   }
 
   savePersona(){ 
-    //Editar
-    if (this.persona.personaId) { 
-      this._personasService.actualizaPersona(this.persona).subscribe( dato => {
-        this.persona = dato;
-        this.personas[this.findIndexById(this.persona.personaId)] = this.persona;
-        this._messageService.add({ severity: 'success', summary: 'Correcto', detail: 'Persona Actualizada', life: 3000 });
-      })
-      
-    } else { // Nuevo
-      console.log(this.persona);
-      this._personasService.guardaPersonas(this.persona).subscribe(dato => {
-        this.persona= dato;
-        this.personas.push(this.persona);
-        this._messageService.add({ severity: 'success', summary: 'Correcto', detail: 'Persona agregada', life: 3000 });
-      })
+    if (this.personaForm.valid) {
+      if (this.persona.personaId) {  //Editar
+        this._personasService.actualizaPersona(this.personaForm.value).subscribe( dato => {
+          this.persona = dato;
+          this.personas[this.findIndexById(this.persona.personaId)] = this.persona;
+          this._messageService.add({ severity: 'success', summary: 'Correcto', detail: 'Persona Actualizada', life: 3000 });
+        }, error => {
+          // Extraer solo el mensaje de error
+          const ErrorMessage = error.error.split('\r\n')[0]; // Toma solo la primera línea
+          this._messageService.add({ severity: 'error', summary: 'Error', detail: 'Error al actualizar persona:\n' + ErrorMessage , life: 5000 });
+        });
+      } else { // Nuevo
+        console.log(this.persona);
+        //eliminar la propiedad personaId para que no se envie al servidor
+        delete this.personaForm.value.personaId;
+        this._personasService.guardaPersonas(this.personaForm.value).subscribe(dato => {
+          this.persona= dato;
+          this.personas.push(this.persona);
+          this._messageService.add({ severity: 'success', summary: 'Correcto', detail: 'Persona agregada', life: 3000 });
+        }, error => {
+          // Extraer solo el mensaje de error
+          const ErrorMessage = error.error.split('\r\n')[0]; // Toma solo la primera línea
+          this._messageService.add({ severity: 'error', summary: 'Error',  detail: 'Error al agregar persona:\n' + ErrorMessage, life: 5000 });
+        });
+      }
+      this.personas = [...this.personas]; // Recarga el arreglo
+      this.hideDialog();
     }
-    this.personas = [...this.personas]; // Recarga el arreglo
-    this.hideDialog();
   }
   
   findIndexById(id: number): number {
@@ -73,6 +93,7 @@ export class PersonasComponent implements OnInit {
   }
 
   abrirDialog() {
+    this.personaForm.reset();
     this.cleanObjectPerson();
     this.personasDialog = true;
   }
@@ -89,6 +110,7 @@ export class PersonasComponent implements OnInit {
 
   editPersona(personaUp: Personas) {
     this.persona = { ...personaUp };
+    this.personaForm.patchValue(this.persona);
     this.personasDialog = true
   }
 

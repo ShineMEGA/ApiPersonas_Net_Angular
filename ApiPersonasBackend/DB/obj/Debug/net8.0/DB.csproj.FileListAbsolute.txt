@@ -40,3 +40,4 @@ C:\git\ApiPersonas\ApiPersonasBackend\DB\obj\Debug\net8.0\refint\DB.dll
 C:\git\ApiPersonas\ApiPersonasBackend\DB\obj\Debug\net8.0\DB.pdb
 C:\git\ApiPersonas\ApiPersonasBackend\DB\obj\Debug\net8.0\DB.genruntimeconfig.cache
 C:\git\ApiPersonas\ApiPersonasBackend\DB\obj\Debug\net8.0\ref\DB.dll
+C:\git\ApiPersonas\ApiPersonasBackend\DB\obj\Debug\net8.0\DB.sourcelink.json

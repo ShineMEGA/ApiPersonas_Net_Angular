@@ -1,5 +1,3 @@
-
-
 <!-- CRUD -->
 <p-toast></p-toast>
 <div class="grid">
@@ -9,12 +7,16 @@
             <p-toolbar styleClass="mb-4">
                 <ng-template pTemplate="left">
                     <div class="my-2">
-                        <button pButton pRipple label="Nueva Persona" icon="pi pi-plus" class="p-button-success mr-2" (click)="abrirDialog()"></button>
+                        <button pButton pRipple label="Nueva Persona" icon="pi pi-plus" class="p-button-success mr-2"
+                            (click)="abrirDialog()"></button>
                     </div>
                 </ng-template>
             </p-toolbar>
 
-            <p-table #dt [value]="personas" [columns]="cols" responsiveLayout="scroll" [rows]="5" [paginator]="true" [rowsPerPageOptions]="[5,10,15]" [showCurrentPageReport]="true" currentPageReportTemplate="Mostrando del {first} al {last} de {totalRecords} registros totales"  [rowHover]="true" dataKey="personaId">
+            <p-table #dt [value]="personas" [columns]="cols" responsiveLayout="scroll" [rows]="5" [paginator]="true"
+                [rowsPerPageOptions]="[5,10,15]" [showCurrentPageReport]="true"
+                currentPageReportTemplate="Mostrando del {first} al {last} de {totalRecords} registros totales"
+                [rowHover]="true" dataKey="personaId">
                 <ng-template pTemplate="caption">
                     <div class="flex flex-column md:flex-row md:justify-content-between md:align-items-center">
                         <h3 class="m-0">Administrar Personas</h3>
@@ -45,8 +47,11 @@
                         </td>
                         <td style="width:10%; min-width:10rem;">
                             <div class="d-flex justify-content-end">
-                                <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success mr-2" (click)="editPersona(persona)"></button>
-                                <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deletePersona(persona)"></button>
+                                <button pButton pRipple icon="pi pi-pencil"
+                                    class="p-button-rounded p-button-success mr-2"
+                                    (click)="editPersona(persona)"></button>
+                                <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning"
+                                    (click)="deletePersona(persona)"></button>
                             </div>
                         </td>
                     </tr>
@@ -60,33 +65,31 @@
 <!-- Modal Formulario para añadir nueva persona-->
 <p-dialog [(visible)]="personasDialog" [style]="{width: '450px'}" header="{{titulo}}" [modal]="true" class="p-fluid">
     <ng-template pTemplate="content">
-        <div class="p-fluid p-formgrid grid">
+        <form class="p-fluid p-formgrid grid" [formGroup]="personaForm" (ngSubmit)="savePersona()">
             <div class="field col-12 md:col-12">
                 <label htmlFor="nombre">Nombre</label>
-                <input [(ngModel)]="persona.nombre" pInputText id="nombre" type="text" required />
-                <small *ngIf="persona.nombre?.length > 50" class="p-error">El nombre no puede exceder 50 caracteres</small>
+                <input formControlName="nombre" pInputText id="nombre" type="text" />
+                <small *ngIf="personaForm.get('nombre').hasError('maxlength')" class="p-error">El nombre no puede
+                    exceder 50 caracteres</small>
             </div>
             <div class="field col-12 md:col-6">
                 <label htmlFor="email">Email</label>
-                <input [(ngModel)]="persona.email" pInputText id="email" type="email" required />
-                <small *ngIf="persona.email && !persona.email.includes('@')" class="p-error">Email no tiene un formato correcto</small>
+                <input formControlName="email" pInputText id="email" type="email" />
+                <small *ngIf="personaForm.get('email').hasError('email')" class="p-error">Email no tiene un formato
+                    correcto</small>
             </div>
             <div class="field col-12 md:col-6">
                 <label htmlFor="edad">Edad</label>
-                <input [(ngModel)]="persona.edad" pInputTextarea id="edad" type="number" min="10" max="100"/>
-                <small *ngIf="persona.edad && (persona.edad < 10 || persona.edad > 100)" class="p-error">
-                    Edad debe estar entre 10 y 100
-                </small>
+                <input formControlName="edad" pInputText id="edad" type="number" />
+                <small *ngIf="personaForm.get('edad').hasError('min') || personaForm.get('edad').hasError('max')"
+                    class="p-error">Edad debe estar entre 10 y 100</small>
             </div>
-        </div>
+        </form>
     </ng-template>
-
     <ng-template pTemplate="footer">
         <button pButton pRipple label="Cancelar" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
-        <button pButton pRipple label="Guardar" icon="pi pi-check" class="p-button-text"  
-                (click)="savePersona()" 
-                [disabled]="!persona.nombre ||  persona.nombre.length > 50 || !persona.email.includes('@') || !persona.edad || persona.edad < 10 || persona.edad > 100">
-        </button>
+        <button pButton pRipple label="Guardar" icon="pi pi-check" type="submit" [disabled]="personaForm.invalid" 
+        class="p-button-text" (click)="savePersona()"></button>
     </ng-template>
 </p-dialog>
 

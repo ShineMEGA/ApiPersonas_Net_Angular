@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
 import {PersonasRoutingModule } from './Personas-routing.module';
 import {PersonasComponent } from './Personas.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { DropdownModule } from 'primeng/dropdown';
@@ -26,7 +26,8 @@ import { DialogModule } from 'primeng/dialog';
     ToastModule,
     ToolbarModule,
     TableModule,
-    DialogModule
+    DialogModule,
+    ReactiveFormsModule
 ],
     declarations: [PersonasComponent]
 })

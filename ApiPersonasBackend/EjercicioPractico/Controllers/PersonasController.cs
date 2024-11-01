@@ -14,7 +14,8 @@ namespace ApiPersonas.Controllers
         private readonly PersonasService _personasService; // se agrega una referencia service para llamar a la capa de servicio
 
         //constructor, necesario inyectar dependencias
-        public PersonasController(ApiPersonasContext context, PersonasService personasService) //al momento de que se inicailiza la clase necestamos algunos valores por defecto
+        // creará e inyectará automáticamente PersonasService, que a su vez recibe PersonasRepository a través de su propio constructor.
+        public PersonasController(ApiPersonasContext context, PersonasService personasService)
         {
             _personasService = personasService; // necesario agregar la instancia del objeto
         }

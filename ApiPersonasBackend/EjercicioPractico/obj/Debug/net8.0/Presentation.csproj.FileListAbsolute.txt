@@ -445,3 +445,4 @@ C:\git\ApiPersonas\ApiPersonasBackend\EjercicioPractico\obj\Debug\net8.0\refint\
 C:\git\ApiPersonas\ApiPersonasBackend\EjercicioPractico\obj\Debug\net8.0\Presentation.pdb
 C:\git\ApiPersonas\ApiPersonasBackend\EjercicioPractico\obj\Debug\net8.0\Presentation.genruntimeconfig.cache
 C:\git\ApiPersonas\ApiPersonasBackend\EjercicioPractico\obj\Debug\net8.0\ref\Presentation.dll
+C:\git\ApiPersonas\ApiPersonasBackend\EjercicioPractico\obj\Debug\net8.0\Presentation.sourcelink.json
