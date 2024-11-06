@@ -31,7 +31,7 @@ builder.Services.AddScoped<PersonasRepository>();
 //Registra la clase PersonasService en el contenedor de dependencias con un ciclo de vida Scoped.
 builder.Services.AddScoped<PersonasService>();
 
-// Agregar una nueva regla para añadir el contexto de la base de datos a laa aplicacion
+// Agregar una nueva regla para añadir el CONTEXTO  de la base de datos a laa aplicacion
 builder.Services.AddDbContext<ApiPersonasContext>(options => 
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("ApiPersonasConnection"));

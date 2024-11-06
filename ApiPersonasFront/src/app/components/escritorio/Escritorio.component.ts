@@ -3,7 +3,7 @@ import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-persona',
-  templateUrl: './Escritorio.component.html',
+  templateUrl: './escritorio.component.html',
   providers:[MessageService]
 })
 export class EscritorioComponent {

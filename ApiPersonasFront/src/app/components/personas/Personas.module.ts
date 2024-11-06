@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
-import {PersonasRoutingModule } from './Personas-routing.module';
-import {PersonasComponent } from './Personas.component';
+import {PersonasRoutingModule } from './personas-routing.module';
+import {PersonasComponent } from './personas.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputTextareaModule } from 'primeng/inputtextarea';
@@ -19,7 +19,7 @@ import { DialogModule } from 'primeng/dialog';
     CommonModule,
    PersonasRoutingModule,
     ButtonModule,
-    FormsModule,
+    FormsModule, // se usa para poder usar NgModel
     InputTextModule,
     InputTextareaModule,
     DropdownModule,

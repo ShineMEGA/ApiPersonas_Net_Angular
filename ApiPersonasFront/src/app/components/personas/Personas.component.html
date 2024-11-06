@@ -47,8 +47,7 @@
                         </td>
                         <td style="width:10%; min-width:10rem;">
                             <div class="d-flex justify-content-end">
-                                <button pButton pRipple icon="pi pi-pencil"
-                                    class="p-button-rounded p-button-success mr-2"
+                                <button pButton pRipple icon="pi pi-pencil"class="p-button-rounded p-button-success mr-2"
                                     (click)="editPersona(persona)"></button>
                                 <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning"
                                     (click)="deletePersona(persona)"></button>
@@ -88,8 +87,7 @@
     </ng-template>
     <ng-template pTemplate="footer">
         <button pButton pRipple label="Cancelar" icon="pi pi-times" class="p-button-text" (click)="hideDialog()"></button>
-        <button pButton pRipple label="Guardar" icon="pi pi-check" type="submit" [disabled]="personaForm.invalid" 
-        class="p-button-text" (click)="savePersona()"></button>
+        <button pButton pRipple label="Guardar" icon="pi pi-check" type="submit" [disabled]="personaForm.invalid" class="p-button-text" (click)="savePersona()"></button>
     </ng-template>
 </p-dialog>
 

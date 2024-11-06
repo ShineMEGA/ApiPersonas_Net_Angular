@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { EscritorioComponent } from './Escritorio.component';
+import { EscritorioComponent } from './escritorio.component';
 
 
 

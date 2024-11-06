@@ -3,17 +3,8 @@
   "WorkspaceRootPath": "C:\\git\\ApiPersonas\\ApiPersonasBackend\\EjercicioPractico\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FF7CB3D7-BAEB-4C1E-9F14-4F27F6DC6C70}|..\\Service\\Service.csproj|c:\\git\\apipersonas\\apipersonasbackend\\service\\personasservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{938D783D-A970-4409-AC01-41FC41F642D7}|..\\DB\\DB.csproj|c:\\git\\apipersonas\\apipersonasbackend\\db\\models\\personas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{5D471CF4-0F31-4A71-A190-BDBC057F7A15}|Presentation.csproj|c:\\git\\apipersonas\\apipersonasbackend\\ejerciciopractico\\controllers\\personascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5D471CF4-0F31-4A71-A190-BDBC057F7A15}|Presentation.csproj|solutionrelative:controllers\\personascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FF7CB3D7-BAEB-4C1E-9F14-4F27F6DC6C70}|..\\Service\\Service.csproj|c:\\git\\apipersonas\\apipersonasbackend\\service\\interfaces\\iservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{5D471CF4-0F31-4A71-A190-BDBC057F7A15}|Presentation.csproj|c:\\git\\apipersonas\\apipersonasbackend\\ejerciciopractico\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5D471CF4-0F31-4A71-A190-BDBC057F7A15}|Presentation.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 173,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -35,54 +26,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "PersonasController.cs",
-              "DocumentMoniker": "C:\\git\\ApiPersonas\\ApiPersonasBackend\\EjercicioPractico\\Controllers\\PersonasController.cs",
-              "RelativeDocumentMoniker": "Controllers\\PersonasController.cs",
-              "ToolTip": "C:\\git\\ApiPersonas\\ApiPersonasBackend\\EjercicioPractico\\Controllers\\PersonasController.cs",
-              "RelativeToolTip": "Controllers\\PersonasController.cs",
-              "ViewState": "AQIAABQAAAAAAAAAAAAmwCsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T06:58:46.051Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Personas.cs",
-              "DocumentMoniker": "C:\\git\\ApiPersonas\\ApiPersonasBackend\\DB\\Models\\Personas.cs",
-              "RelativeDocumentMoniker": "..\\DB\\Models\\Personas.cs",
-              "ToolTip": "C:\\git\\ApiPersonas\\ApiPersonasBackend\\DB\\Models\\Personas.cs",
-              "RelativeToolTip": "..\\DB\\Models\\Personas.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAuwAoAAAAwAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T04:49:32.935Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PersonasService.cs",
-              "DocumentMoniker": "C:\\git\\ApiPersonas\\ApiPersonasBackend\\Service\\PersonasService.cs",
-              "RelativeDocumentMoniker": "..\\Service\\PersonasService.cs",
-              "ToolTip": "C:\\git\\ApiPersonas\\ApiPersonasBackend\\Service\\PersonasService.cs",
-              "RelativeToolTip": "..\\Service\\PersonasService.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAADwvxsAAAAAAAAA",
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\git\\ApiPersonas\\ApiPersonasBackend\\EjercicioPractico\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\git\\ApiPersonas\\ApiPersonasBackend\\EjercicioPractico\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T04:45:40.402Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IService.cs",
-              "DocumentMoniker": "C:\\git\\ApiPersonas\\ApiPersonasBackend\\Service\\interfaces\\IService.cs",
-              "RelativeDocumentMoniker": "..\\Service\\interfaces\\IService.cs",
-              "ToolTip": "C:\\git\\ApiPersonas\\ApiPersonasBackend\\Service\\interfaces\\IService.cs",
-              "RelativeToolTip": "..\\Service\\interfaces\\IService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T04:45:37.944Z",
+              "WhenOpened": "2024-11-05T22:48:32.422Z",
               "EditorCaption": ""
             }
           ]

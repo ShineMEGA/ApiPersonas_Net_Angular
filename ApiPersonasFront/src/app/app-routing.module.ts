@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NotfoundComponent } from './layout/notfound/notfound.component';
-import { EscritorioComponent } from './components/escritorio/Escritorio.component';
+import { EscritorioComponent } from './components/escritorio/escritorio.component';
 import { AppLayoutComponent } from './layout/app.layout.component';
 
 const routes: Routes = [

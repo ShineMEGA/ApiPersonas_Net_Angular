@@ -84,11 +84,6 @@ export class AppConfigComponent {
         this.layoutService.showConfigSidebar();
     }
 
-    changeTheme(theme: string, colorScheme: string) {
-        this.theme = theme;
-        this.colorScheme = colorScheme;
-    }
-
     decrementScale() {
         this.scale--;
     }

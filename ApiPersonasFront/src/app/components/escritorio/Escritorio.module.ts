@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { EscritorioRoutingModule } from './Escritorio-routing.module';
-import { EscritorioComponent } from './Escritorio.component';
+import { EscritorioRoutingModule } from './escritorio-routing.module';
+import { EscritorioComponent } from './escritorio.component';
 
 /* LAS IMPORTACIONES MANEJAN MODULOS */
 /* EN LA DECLARATIONS: MANEJAN componentes*/
