@@ -54,7 +54,7 @@ export class PersonasComponent implements OnInit {
           this.personas[this.findIndexById(this.persona.personaId)] = this.persona;
           this.personas = [...this.personas]; // Recarga el arreglo después de actualizar
           this._messageService.add({ severity: 'success', summary: 'Correcto', detail: 'Persona Actualizada', life: 3000 });
-          this.hideDialog(); // Cierra el diálogo después de que se actualice el arreglo
+          this.hideDialog(); // Cierra el modal después de que se actualice el arreglo
         }, error => {
           const ErrorMessage = error.error.split('\r\n')[0];
           this._messageService.add({ severity: 'error', summary: 'Error', detail: 'Error al actualizar persona:\n' + ErrorMessage, life: 5000 });
@@ -66,7 +66,7 @@ export class PersonasComponent implements OnInit {
           this.personas.push(this.persona);
           this.personas = [...this.personas]; // Recarga el arreglo después de agregar
           this._messageService.add({ severity: 'success', summary: 'Correcto', detail: 'Persona agregada', life: 3000 });
-          this.hideDialog(); // Cierra el diálogo después de que se actualice el arreglo
+          this.hideDialog(); // Cierra el modal después de que se actualice el arreglo
         }, error => {
           const ErrorMessage = error.error.split('\r\n')[0];
           this._messageService.add({ severity: 'error', summary: 'Error', detail: 'Error al agregar persona:\n' + ErrorMessage, life: 5000 });
