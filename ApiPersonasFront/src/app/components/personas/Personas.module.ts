@@ -17,12 +17,11 @@ import { DialogModule } from 'primeng/dialog';
 @NgModule({
     imports: [
     CommonModule,
-   PersonasRoutingModule,
+    PersonasRoutingModule,
     ButtonModule,
     FormsModule, // se usa para poder usar NgModel
     InputTextModule,
     InputTextareaModule,
-    DropdownModule,
     ToastModule,
     ToolbarModule,
     TableModule,

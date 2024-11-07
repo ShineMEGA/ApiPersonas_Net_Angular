@@ -25,7 +25,7 @@ export class PersonasComponent implements OnInit {
   personaForm: FormGroup = new FormGroup({});
 
   constructor(
-    private _personasService: PersonasService,
+    private _personasService: PersonasService, // se inyecta el servicio PersonasService para poder usarlo 
     private _messageService: MessageService,
     private  fb: FormBuilder
   ) {}
@@ -41,41 +41,40 @@ export class PersonasComponent implements OnInit {
   }
   
   fpersonas(){
-    this._personasService.obtenerPersonas().subscribe(dato =>{
+    this._personasService.obtenerPersonas().subscribe(dato =>{ // se suscribe al servicio para obtener la lista de personas
       this.personas = dato;
     })
   }
 
-  savePersona(){ 
+  savePersona() { 
     if (this.personaForm.valid) {
-      if (this.persona.personaId) {  //Editar
-        this._personasService.actualizaPersona(this.personaForm.value).subscribe( dato => {
+      if (this.persona.personaId) {  // Editar
+        this._personasService.actualizaPersona(this.personaForm.value).subscribe(dato => {
           this.persona = dato;
           this.personas[this.findIndexById(this.persona.personaId)] = this.persona;
+          this.personas = [...this.personas]; // Recarga el arreglo después de actualizar
           this._messageService.add({ severity: 'success', summary: 'Correcto', detail: 'Persona Actualizada', life: 3000 });
+          this.hideDialog(); // Cierra el diálogo después de que se actualice el arreglo
         }, error => {
-          // Extraer solo el mensaje de error
-          const ErrorMessage = error.error.split('\r\n')[0]; // Toma solo la primera línea
-          this._messageService.add({ severity: 'error', summary: 'Error', detail: 'Error al actualizar persona:\n' + ErrorMessage , life: 5000 });
+          const ErrorMessage = error.error.split('\r\n')[0];
+          this._messageService.add({ severity: 'error', summary: 'Error', detail: 'Error al actualizar persona:\n' + ErrorMessage, life: 5000 });
         });
       } else { // Nuevo
-        console.log(this.persona);
-        //eliminar la propiedad personaId para que no se envie al servidor
-        delete this.personaForm.value.personaId;
+        delete this.personaForm.value.personaId; // Elimina personaId antes de enviar
         this._personasService.guardaPersonas(this.personaForm.value).subscribe(dato => {
-          this.persona= dato;
+          this.persona = dato;
           this.personas.push(this.persona);
+          this.personas = [...this.personas]; // Recarga el arreglo después de agregar
           this._messageService.add({ severity: 'success', summary: 'Correcto', detail: 'Persona agregada', life: 3000 });
+          this.hideDialog(); // Cierra el diálogo después de que se actualice el arreglo
         }, error => {
-          // Extraer solo el mensaje de error
-          const ErrorMessage = error.error.split('\r\n')[0]; // Toma solo la primera línea
-          this._messageService.add({ severity: 'error', summary: 'Error',  detail: 'Error al agregar persona:\n' + ErrorMessage, life: 5000 });
+          const ErrorMessage = error.error.split('\r\n')[0];
+          this._messageService.add({ severity: 'error', summary: 'Error', detail: 'Error al agregar persona:\n' + ErrorMessage, life: 5000 });
         });
       }
-      this.personas = [...this.personas]; // Recarga el arreglo
-      this.hideDialog();
     }
   }
+  
   
   findIndexById(id: number): number {
     let index = -1;
